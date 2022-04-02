@@ -11,7 +11,9 @@ public class PlayerController : MonoBehaviour
 
     private float moveX;
     private float moveY;
-
+    private float fireCooldownCounter;
+    [SerializeField] private float fireCooldown = 0.1f;
+    
 
     void Update()
     {
@@ -25,9 +27,15 @@ public class PlayerController : MonoBehaviour
             0
             );
 
-        if (Input.GetButtonDown("Fire1"))
+
+        if (fireCooldownCounter > 0)
+        {
+            fireCooldownCounter -= Time.deltaTime;
+        }
+        if (Input.GetButton("Fire1") && fireCooldownCounter <= 0)
         {
             Instantiate(pfBullet, shotPoint.position, Quaternion.identity);
+            fireCooldownCounter = fireCooldown;
         }
     }
 }

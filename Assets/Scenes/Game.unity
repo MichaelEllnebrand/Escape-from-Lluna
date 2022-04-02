@@ -9761,7 +9761,7 @@ Transform:
   - {fileID: 394254177}
   - {fileID: 1803787835}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &597956617
 GameObject:
@@ -9824,6 +9824,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pfEnemy: {fileID: 926968186480233775, guid: f84524f1ddcebf84da5d9cb9c2d711dc, type: 3}
   timeBetweenSpawn: 2
+  timeBetweenSpawnDecrease: 0.05
+  minTimeBetweenSpawn: 0.5
 --- !u!4 &779062993
 Transform:
   m_ObjectHideFlags: 0
@@ -10420,7 +10422,7 @@ Transform:
   - {fileID: 1233934290}
   - {fileID: 597956618}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2123099364
 MonoBehaviour:
@@ -10437,3 +10439,4 @@ MonoBehaviour:
   pfBullet: {fileID: 4541655794911977950, guid: bcdf94815823da148998786aece8b7ed, type: 3}
   shotPoint: {fileID: 597956618}
   speed: 15
+  fireCooldown: 0.1

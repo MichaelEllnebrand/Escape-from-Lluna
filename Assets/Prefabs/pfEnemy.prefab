@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 926968186480233772}
   - component: {fileID: 926968186480233773}
-  - component: {fileID: 926968186480233774}
   - component: {fileID: 2584474246101764237}
+  - component: {fileID: 926968186480233774}
   m_Layer: 0
   m_Name: pfEnemy
   m_TagString: Enemy
@@ -47,6 +47,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySpeed: 5
+  enemyAcceleration: 1
+--- !u!114 &2584474246101764237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 926968186480233775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4141a3998569cfa40b26075684cf9a0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totalHealth: 3
+  deathEffect: {fileID: 3343918759433682434, guid: 7bcb9ce2b1e9b0644957dc577f08426a, type: 3}
 --- !u!61 &926968186480233774
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -73,20 +88,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &2584474246101764237
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 926968186480233775}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4141a3998569cfa40b26075684cf9a0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  totalHealth: 5
-  deathEffect: {fileID: 3343918759433682434, guid: 7bcb9ce2b1e9b0644957dc577f08426a, type: 3}
 --- !u!1 &926968187444699141
 GameObject:
   m_ObjectHideFlags: 0

@@ -28,14 +28,12 @@ public class BulletController : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             other.GetComponent<EnemyHealthController>().Damage(damageAmount);
-            Debug.Log("Hit an enemy");
+            if (hitEffect != null)
+            {
+                Instantiate(hitEffect, transform.position, Quaternion.identity);
+            }
+            Destroy(gameObject);
         }
-
-        if (hitEffect != null)
-        {
-            Instantiate(hitEffect, transform.position, Quaternion.identity);
-        }
-        Destroy(gameObject);
     }
 
     private void OnBecameInvisible()

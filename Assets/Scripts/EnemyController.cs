@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     [SerializeField] private float enemySpeed = 10;
+    [SerializeField] private float enemyAcceleration =0.01f;
     private GameObject player;
 
     void Awake()
@@ -19,6 +20,7 @@ public class EnemyController : MonoBehaviour
 
     void Update()
     {
+        enemySpeed += enemyAcceleration * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, player.transform.position, enemySpeed * Time.deltaTime);
     }
 }

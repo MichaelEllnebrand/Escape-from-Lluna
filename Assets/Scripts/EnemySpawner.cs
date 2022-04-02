@@ -5,19 +5,12 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private GameObject pfEnemy;
-    [SerializeField] private float timeBetweenSpawn;
+    [SerializeField] private float timeBetweenSpawn=2.0f;
+    [SerializeField] private float timeBetweenSpawnDecrease = 0.1f;
+    [SerializeField] private float minTimeBetweenSpawn = 0.3f;
 
     private float spawnTimer;
 
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         spawnTimer -= Time.deltaTime;
@@ -25,6 +18,9 @@ public class EnemySpawner : MonoBehaviour
         if (spawnTimer < 0)
         {
             spawnTimer += timeBetweenSpawn;
+            timeBetweenSpawn -= timeBetweenSpawnDecrease;
+            if (timeBetweenSpawn < minTimeBetweenSpawn) timeBetweenSpawn = minTimeBetweenSpawn;
+
             Vector3 spawnPosition = new Vector3(Random.Range(-25, 25), 20, 0);
             Instantiate(pfEnemy,spawnPosition,Quaternion.identity);
         }
