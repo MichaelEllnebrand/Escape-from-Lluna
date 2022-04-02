@@ -110,7 +110,7 @@ Transform:
   m_GameObject: {fileID: 1327834730219961764}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children:
   - {fileID: 2078257231750884837}
   m_Father: {fileID: 0}
@@ -166,4 +166,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpeed: 20
-  bulletDirection: {x: 0, y: 0}
+  hitEffect: {fileID: 8381448983179777671, guid: 8aad8d40c6336cd49a8a07b53c3fbe7c, type: 3}

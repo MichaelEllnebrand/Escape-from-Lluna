@@ -5,8 +5,11 @@ using UnityEngine;
 public class BulletController : MonoBehaviour
 {
     [SerializeField] private float bulletSpeed = 10f;
-    
+    [SerializeField] private GameObject hitEffect;
+
     private Rigidbody2D rb;
+    private int damageAmount = 1;
+    
 
     private void Awake()
     {
@@ -24,9 +27,14 @@ public class BulletController : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
+            other.GetComponent<EnemyHealthController>().Damage(damageAmount);
             Debug.Log("Hit an enemy");
         }
 
+        if (hitEffect != null)
+        {
+            Instantiate(hitEffect, transform.position, Quaternion.identity);
+        }
         Destroy(gameObject);
     }
 

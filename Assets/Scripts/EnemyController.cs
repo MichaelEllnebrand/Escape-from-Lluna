@@ -10,6 +10,11 @@ public class EnemyController : MonoBehaviour
     void Awake()
     {
         player = GameObject.Find("Player");
+        if (player == null)
+        {
+            Destroy(gameObject);
+        }
+
     }
 
     void Update()
