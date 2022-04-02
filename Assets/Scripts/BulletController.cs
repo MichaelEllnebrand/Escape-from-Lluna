@@ -5,7 +5,6 @@ using UnityEngine;
 public class BulletController : MonoBehaviour
 {
     [SerializeField] private float bulletSpeed = 10f;
-    public Vector2 bulletDirection;
     
     private Rigidbody2D rb;
 
@@ -30,7 +29,6 @@ public class BulletController : MonoBehaviour
 
         Destroy(gameObject);
     }
-
 
     private void OnBecameInvisible()
     {
