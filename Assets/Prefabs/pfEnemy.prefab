@@ -62,6 +62,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   totalHealth: 3
   deathEffect: {fileID: 3343918759433682434, guid: 7bcb9ce2b1e9b0644957dc577f08426a, type: 3}
+  hitClip: {fileID: 8300000, guid: 795d51087d528da4daf48845e32250d9, type: 3}
+  dieClip: {fileID: 8300000, guid: a1d0ddc187b450545bdb4660494d905e, type: 3}
 --- !u!61 &926968186480233774
 BoxCollider2D:
   m_ObjectHideFlags: 0

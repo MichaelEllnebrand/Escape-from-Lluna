@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerHealthController : MonoBehaviour
 {
     [SerializeField] private GameObject deathEffet;
+    [SerializeField] private AudioClip dieClip;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -14,8 +15,8 @@ public class PlayerHealthController : MonoBehaviour
             {
                 Instantiate(deathEffet,transform.position,Quaternion.identity);
             }
+            AudioManager.Instance.PlaySound(dieClip);
             Destroy(gameObject);
-
             FindObjectOfType<GameManager>().GameOver();
         }
     }

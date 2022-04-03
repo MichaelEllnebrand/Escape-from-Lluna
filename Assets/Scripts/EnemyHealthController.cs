@@ -6,6 +6,8 @@ public class EnemyHealthController : MonoBehaviour
 {
     [SerializeField] private int totalHealth = 3;
     [SerializeField] private GameObject deathEffect;
+    [SerializeField] private AudioClip hitClip;
+    [SerializeField] private AudioClip dieClip;
 
     public void Damage(int damageAmount)
     {
@@ -17,7 +19,12 @@ public class EnemyHealthController : MonoBehaviour
                 Instantiate(deathEffect,transform.position,Quaternion.identity);
             }
             // TODO: Audio
+            AudioManager.Instance.PlaySound(dieClip);
             Destroy(gameObject);
+        }
+        else
+        {
+            AudioManager.Instance.PlaySound(hitClip);
         }
     }
 }

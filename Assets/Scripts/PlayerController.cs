@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private Transform pfBullet;
     [SerializeField] private Transform shotPoint;
+    [SerializeField] private AudioClip shootClip;
 
     [SerializeField] private float speed;
 
@@ -36,6 +37,7 @@ public class PlayerController : MonoBehaviour
         {
             Instantiate(pfBullet, shotPoint.position, Quaternion.identity);
             fireCooldownCounter = fireCooldown;
+            AudioManager.Instance.PlaySound(shootClip);
         }
     }
 }
